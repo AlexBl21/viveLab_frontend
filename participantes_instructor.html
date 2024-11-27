@@ -7,19 +7,20 @@
     <link rel="stylesheet" href="css/dashboard_instructor.css">
 </head>
 <body>
-    <aside class="sidebar">
-        <div class="logo-container">
-            <img src="css/img/fablab.png" alt="Logo de la página" class="logo">
-        </div>
-        <h2>Instructor Panel</h2>
-        <ul>
-            <li><a href="dashboard_instructor.html" ><strong>Panel General</strong></a></li>
-            <li><a href="inscripciones_instructor.html"><strong>Inscripciones</strong></a></li>
-            <li><a href="#" class="active"><strong>Participantes</strong></a></li>
-            <li><a href="sesiones_instructor.html"><strong>Sesiones</strong></a></li>
-            <li><a href="evidencias_instrcutor.html"><strong>Evidencias</strong></a></li>
-        </ul>
-    </aside>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="css/img/fablab.png" alt="Logo de la página" class="logo">
+            </div>
+            <h2>Instructor Panel</h2>
+            <ul>
+                <li><a href="dashboard_instructor.html" ><strong>Panel General</strong></a></li>
+                <li><a href="inscripciones_instructor.html"><strong>Inscripciones</strong></a></li>
+                <li><a href="#" class="active"><strong>Participantes</strong></a></li>
+                <li><a href="sesiones_instructor.html"><strong>Sesiones</strong></a></li>
+                <li><a href="evidencias_instrcutor.html"><strong>Evidencias</strong></a></li>
+            </ul>
+        </aside>
 
         <main class="main-content">
             <header class="main-header">
@@ -33,8 +34,9 @@
             <section class="table-section">
                 <div class="table-header">
                     <h2>Participantes</h2>
+                    <button class="btn btn-primary" id="btnAddParticipante">+ Nuevo Participante</button>
                 </div>
-                <table class="participantes-table">
+                <table class="inscripciones-table">
                     <thead>
                         <tr>
                             <th>Nombre</th>
@@ -51,12 +53,37 @@
                             <td>12345678</td>
                             <td>Colegio Nacional</td>
                             <td>
-                                <button class="btn btn-edit">Editar</button>
+                                <button class="btn btn-edit" onclick="mostrarEditarParticipante('Juan Pérez', 'CC', '12345678', 'Colegio Nacional')">Editar</button>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </section>
+            
+            <div class="modal" id="editarParticipanteModal">
+                <div class="modal-content">
+                    <h3>Editar Participante</h3>
+                    <form id="editarParticipanteForm">
+                        <label for="nombreParticipante">Nombre:</label>
+                        <input type="text" id="nombreParticipante" name="nombreParticipante" required>
+            
+                        <label for="tipoDocumento">Tipo de Documento:</label>
+                        <select id="tipoDocumento" name="tipoDocumento" required>
+                            <option value="" disabled selected>Seleccione un tipo</option>
+                            <option value="CC">C.C</option>
+                            <option value="TI">T.I</option>
+                        </select>
+            
+                        <label for="colegioParticipante">Colegio:</label>
+                        <input type="text" id="colegioParticipante" name="colegioParticipante" required>
+            
+                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                        <button type="button" class="btn btn-secondary" id="closeModalBtn">Cancelar</button>
+                    </form>
+                </div>
+            </div>
+            
+            
         </main>
     </div>
 
@@ -84,6 +111,6 @@
     </div>
 
     <script src="https://kit.fontawesome.com/a9dda8267b.js" crossorigin="anonymous"></script>
-    <script src="js/participantes_inst.js"></script>
+    <script src="js/instructor/participantes_inst.js"></script>
 </body>
 </html>

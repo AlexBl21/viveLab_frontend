@@ -1,21 +1,18 @@
-// Modal para editar participante
-const editarParticipanteModal = document.getElementById('editarParticipanteModal');
-const editarButtons = document.querySelectorAll('.btn-edit');
-const closeModalBtn = document.getElementById('closeModalBtn');
-
-// Abrir modal al hacer clic en "Editar"
-editarButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        editarParticipanteModal.style.display = 'flex';
-
-        // Simulación de cargar datos del participante seleccionado
-        document.getElementById('nombreParticipante').value = "Juan Pérez";
-        document.getElementById('tipoDocumento').value = "CC";
-        document.getElementById('colegioParticipante').value = "Colegio Nacional";
-    });
+document.getElementById('btnAddParticipante').addEventListener('click', () => {
+    const modal = document.getElementById('editarParticipanteModal');
+    modal.style.display = 'flex';
 });
 
-// Cerrar modal al hacer clic en "Cancelar"
-closeModalBtn.addEventListener('click', () => {
-    editarParticipanteModal.style.display = 'none';
+document.getElementById('closeModalBtn').addEventListener('click', () => {
+    const modal = document.getElementById('editarParticipanteModal');
+    modal.style.display = 'none';
 });
+
+// Función para mostrar el modal con datos precargados
+function mostrarEditarParticipante(nombre, tipoDocumento, numeroDocumento, colegio) {
+    const modal = document.getElementById('editarParticipanteModal');
+    document.getElementById('nombreParticipante').value = nombre;
+    document.getElementById('tipoDocumento').value = tipoDocumento;
+    document.getElementById('colegioParticipante').value = colegio;
+    modal.style.display = 'flex';
+}
