@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Participantes</title>
+    <link rel="stylesheet" href="css/dashboard_instructor.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo-container">
+            <img src="css/img/fablab.png" alt="Logo de la página" class="logo">
+        </div>
+        <h2>Instructor Panel</h2>
+        <ul>
+            <li><a href="dashboard_instructor.html" ><strong>Panel General</strong></a></li>
+            <li><a href="inscripciones_instructor.html"><strong>Inscripciones</strong></a></li>
+            <li><a href="#" class="active"><strong>Participantes</strong></a></li>
+            <li><a href="sesiones_instructor.html"><strong>Sesiones</strong></a></li>
+            <li><a href="evidencias_instrcutor.html"><strong>Evidencias</strong></a></li>
+        </ul>
+    </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Gestión de Participantes</h1>
+                <div class="user-info">
+                    <i class="fas fa-user"></i>
+                    <span>Instructor</span>
+                </div>
+            </header>
+
+            <section class="table-section">
+                <div class="table-header">
+                    <h2>Participantes</h2>
+                </div>
+                <table class="participantes-table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Tipo de Documento</th>
+                            <th>Número de Documento</th>
+                            <th>Colegio</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Juan Pérez</td>
+                            <td>C.C</td>
+                            <td>12345678</td>
+                            <td>Colegio Nacional</td>
+                            <td>
+                                <button class="btn btn-edit">Editar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <div class="modal" id="editarParticipanteModal">
+        <div class="modal-content">
+            <h3>Editar Participante</h3>
+            <form id="editarParticipanteForm">
+                <label for="nombreParticipante">Nombre:</label>
+                <input type="text" id="nombreParticipante" name="nombreParticipante" required>
+
+                <label for="tipoDocumento">Tipo de Documento:</label>
+                <select id="tipoDocumento" name="tipoDocumento" required>
+                    <option value="" disabled selected>Seleccione un tipo</option>
+                    <option value="CC">C.C</option>
+                    <option value="TI">T.I</option>
+                </select>
+
+                <label for="colegioParticipante">Colegio:</label>
+                <input type="text" id="colegioParticipante" name="colegioParticipante" required>
+
+                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                <button type="button" class="btn btn-secondary" id="closeModalBtn">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a9dda8267b.js" crossorigin="anonymous"></script>
+    <script src="js/participantes_inst.js"></script>
+</body>
+</html>

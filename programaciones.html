@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Programaciones</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="css/img/fablab.png" alt="Logo de la página" class="logo">
+            </div>
+            <h2>Admin Panel</h2>
+            <ul>
+                <li><a href="dashboard.html">Panel General</a></li>
+                <li><a href="talleres.html">Talleres</a></li>
+                <li><a href="instructor.html">Instructores</a></li>
+                <li><a href="#" class="active">Programaciones</a></li>
+                <li><a href="inscripciones.html">Inscripciones</a></li>
+                <li><a href="sesiones.html">Sesiones</a></li>
+                <li><a href="evidencias.html">Evidencias</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Gestión de Programaciones</h1>
+                <div class="user-info">
+                    <i class="fas fa-user-circle"></i>
+                    <span>Administrador</span>
+                </div>
+            </header>
+
+            <section class="table-section">
+                <div class="table-header">
+                    <h2>Listado de Programaciones</h2>
+                    <button class="btn btn-primary" id="addProgramacionBtn">+ Agregar Programación</button>
+                </div>
+
+                <section class="filters">
+                    <h2>Filtros</h2>
+                    <form>
+                        <label for="name">Taller programado</label>
+                        <input type="text" id="name" name="name">
+    
+                        <label for="date">Fecha de programacion:</label>
+                        <input type="date" id="date" name="date">
+    
+                        <button type="submit">Aplicar Filtros</button>
+                    </form>
+                </section>
+                <table class="programaciones-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Taller</th>
+                            <th>Instructor</th>
+                            <th>Municipio</th>
+                            <th>Colegio</th>
+                            <th>Ubicación</th>
+                            <th>Fechas</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Ejemplo de fila -->
+                        <tr>
+                            <td>1</td>
+                            <td>Introducción a la Robótica </td>
+                            <td>Juan Pérez</td>
+                            <td>Cúcuta</td>
+                            <td>Colegio Central</td>
+                            <td>Aula 102</td>
+                            <td>01/12/2024 - 10/12/2024</td>
+                            <td>
+                                <button class="btn btn-edit">Editar</button>
+                                <button class="btn btn-delete">Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal para agregar o editar programación -->
+    <div class="modal" id="programacionModal">
+        <div class="modal-content">
+            <h3 id="modalTitle">Agregar Programación</h3>
+            <form id="programacionForm">
+                <label for="tallerSelect">Taller:</label>
+                <select id="tallerSelect" name="taller" required>
+                    <option value="">Seleccionar Taller</option>
+                    <option value="1">Introducción a la Robótica</option>
+                </select>
+
+                <label for="instructorSelect">Instructor:</label>
+                <select id="instructorSelect" name="instructor" required>
+                    <option value="">Seleccionar Instructor</option>
+                    <option value="1">Juan Pérez</option>
+                </select>
+
+                <label for="municipio">municipio:</label>
+                <select id="municipio" name="municipio" required>
+                    <option value="">Seleccionar Instructor</option>
+                    <option value="1">Cúcuta</option>
+                </select>
+
+                <label for="colegioSelect">Colegio:</label>
+                <select id="colegioSelect" name="colegio" required>
+                    <option value="">Seleccionar Colegio</option>
+                    <option value="1">Colegio Central</option>
+                </select>
+
+                <label for="ubicacionInput">Ubicación:</label>
+                <input type="text" id="ubicacionInput" name="ubicacion" required>
+
+                <label for="fechaInicioInput">Fecha Inicio:</label>
+                <input type="date" id="fechaInicioInput" name="fechaInicio" required>
+
+                <label for="fechaFinInput">Fecha Fin:</label>
+                <input type="date" id="fechaFinInput" name="fechaFin" required>
+
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <button type="button" class="btn btn-secondary" id="closeModalBtn">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a9dda8267b.js" crossorigin="anonymous"></script>
+    <script src="js/programaciones.js"></script>
+</body>
+</html>

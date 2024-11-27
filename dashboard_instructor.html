@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Instructor</title>
+    <link rel="stylesheet" href="css/dashboard_instructor.css">
+</head>
+<body>
+    <div class="dashboard-container">
+
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="css/img/fablab.png" alt="Logo de la página" class="logo">
+            </div>
+            <h2>Instructor Panel</h2>
+            <ul>
+                <li><a href="#" class="active"><strong>Panel General</strong></a></li>
+                <li><a href="inscripciones_instructor.html"><strong>Inscripciones</strong></a></li>
+                <li><a href="participantes_instructor.html"><strong>Participantes</strong></a></li>
+                <li><a href="sesiones_instructor.html"><strong>Sesiones</strong></a></li>
+                <li><a href="evidencias_instrcutor.html"><strong>Evidencias</strong></a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="main-header">
+                <h1>Panel General</h1>
+                <div class="user-info">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Instructor</span>
+                </div>
+            </header>
+
+            <section class="stats-cards">
+                <div class="card">
+                    <h3>Talleres Asignados</h3>
+                    <p>5</p>
+                </div>
+                <div class="card">
+                    <h3>Participantes</h3>
+                    <p>120</p>
+                </div>
+                <div class="card">
+                    <h3>Sesiones Pendientes</h3>
+                    <p>3</p>
+                </div>
+                <div class="card">
+                    <h3>Evidencias Subidas</h3>
+                    <p>12</p>
+                </div>
+            </section>
+
+            <section class="filters">
+                <h2>Filtros Rápidos</h2>
+                <form>
+                    <label for="workshop">Taller:</label>
+                    <input type="text" id="workshop" name="workshop">
+
+                    <label for="date">Fecha:</label>
+                    <input type="date" id="date" name="date">
+
+                    <label for="status">Estado:</label>
+                    <select id="status" name="status">
+                        <option value="all">Todos</option>
+                        <option value="pending">Pendiente</option>
+                        <option value="completed">Completado</option>
+                    </select>
+
+                    <button type="submit">Buscar</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a9dda8267b.js" crossorigin="anonymous"></script>
+    <script src="js/instructor/dashboard.js"></script>
+</body>
+</html>

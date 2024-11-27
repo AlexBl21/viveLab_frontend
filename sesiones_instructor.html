@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Sesiones</title>
+    <link rel="stylesheet" href="css/dashboard_instructor.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="css/img/fablab.png" alt="Logo de la página" class="logo">
+            </div>
+            <h2>Instructor Panel</h2>
+            <ul>
+                <li><a href="dashboard_instructor.html" ><strong>Panel General</strong></a></li>
+                <li><a href="inscripciones_instructor.html"><strong>Inscripciones</strong></a></li>
+                <li><a href="participantes_instructor.html" ><strong>Participantes</strong></a></li>
+                <li><a href="#" class="active"><strong>Sesiones</strong></a></li>
+                <li><a href="evidencias_instrcutor.html"><strong>Evidencias</strong></a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Gestión de Sesiones</h1>
+                <div class="user-info">
+                    <i class="fas fa-user"></i>
+                    <span>Instructor</span>
+                </div>
+            </header>
+
+            <section class="table-section">
+                <div class="table-header">
+                    <h2>Sesiones</h2>
+                    <button class="btn btn-primary" id="addSesionBtn">+ Agregar Sesión</button>
+                </div>
+                <table class="sesiones-table">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                            <th>Ubicación</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2024-11-27</td>
+                            <td>10:00 AM</td>
+                            <td>Sala A</td>
+                            <td>
+                                <button class="btn btn-asistencia">Registrar Asistencia</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <div class="modal" id="sesionModal">
+        <div class="modal-content">
+            <h3 id="modalTitle">Agregar Sesión</h3>
+            <form id="sesionForm">
+                <label for="fechaSesion">Fecha:</label>
+                <input type="date" id="fechaSesion" name="fechaSesion" required>
+
+                <label for="horaSesion">Hora:</label>
+                <input type="time" id="horaSesion" name="horaSesion" required>
+
+                <label for="ubicacionSesion">Ubicación:</label>
+                <input type="text" id="ubicacionSesion" name="ubicacionSesion" required>
+
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <button type="button" class="btn btn-secondary" id="closeModalBtn">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="asistenciaModal">
+        <div class="modal-content">
+            <h3>Registrar Asistencia</h3>
+            <form id="asistenciaForm">
+                <ul>
+                    <li>
+                        <label>
+                            <input type="checkbox" name="asistencia" value="1">
+                            Juan Pérez
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" name="asistencia" value="2">
+                            Ana López
+                        </label>
+                    </li>
+                </ul>
+                <button type="submit" class="btn btn-primary">Guardar Asistencia</button>
+                <button type="button" class="btn btn-secondary" id="closeAsistenciaModalBtn">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a9dda8267b.js" crossorigin="anonymous"></script>
+    <script src="js/instructor/sesion_inst.js"></script>
+</body>
+</html>

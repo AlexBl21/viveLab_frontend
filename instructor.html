@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Instructores</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="css/img/fablab.png" alt="Logo de la página" class="logo">
+            </div>
+            <h2>Admin Panel</h2>
+            <ul>
+                <li><a href="dashboard.html">Panel General</a></li>
+                <li><a href="talleres.html">Talleres</a></li>
+                <li><a href="#" class="active">Instructores</a></li>
+                <li><a href="programaciones.html">Programaciones</a></li>
+                <li><a href="inscripciones.html">Inscripciones</a></li>
+                <li><a href="sesiones.html">Sesiones</a></li>
+                <li><a href="evidencias.html">Evidencias</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Gestión de Instructores</h1>
+                <div class="user-info">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Administrador</span>
+                </div>
+            </header>
+
+            <section class="table-section">
+                <div class="table-header">
+                    <h2>Listado de Instructores</h2>
+                    <button class="btn btn-primary" id="addInstructorBtn">+ Agregar Instructor</button>
+                </div>
+                <section class="filters">
+                    <form>
+                        <label for="name">Nombre del instructor</label>
+                        <input type="text" id="name" name="name">
+    
+                        <button type="submit">Buscar</button>
+                    </form>
+                </section>
+                <table class="talleres-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Especialidad</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>María Pérez</td>
+                            <td>Electrónica</td>
+                            <td>
+                                <button class="btn btn-edit">Editar</button>
+                                <button class="btn btn-delete">Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <div class="modal" id="instructorModal">
+        <div class="modal-content">
+            <h3 id="modalTitle">Agregar Instructor</h3>
+            <form id="instructorForm">
+                <label for="nombreInstructor">Nombre:</label>
+                <input type="text" id="nombreInstructor" name="nombreInstructor" required>
+
+                <label for="especialidadInstructor">Especialidad:</label>
+                <input type="text" id="especialidadInstructor" name="especialidadInstructor" required>
+
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <button type="button" class="btn btn-secondary" id="closeModalBtn">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a9dda8267b.js" crossorigin="anonymous"></script>
+    <script src="js/instructor.js"></script>
+</body>
+</html>

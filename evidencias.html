@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Evidencias</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="css/img/fablab.png" alt="Logo de la página" class="logo">
+            </div>
+            <h2>Admin Panel</h2>
+            <ul>
+                <li><a href="dashboard.html">Panel General</a></li>
+                <li><a href="talleres.html">Talleres</a></li>
+                <li><a href="instructor.html">Instructores</a></li>
+                <li><a href="programaciones.html">Programaciones</a></li>
+                <li><a href="inscripciones.html">Inscripciones</a></li>
+                <li><a href="sesiones.html">Sesiones</a></li>
+                <li><a href="#" class="active">Evidencias</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Gestión de Evidencias</h1>
+                <div class="user-info">
+                    <i class="fas fa-user"></i>
+                    <span>Administrador</span>
+                </div>
+            </header>
+
+            <!-- Section: Tabla de Evidencias -->
+            <section class="table-section">
+                <div class="table-header">
+                    <h2>Evidencias Subidas</h2>
+                </div>
+                <table class="evidencias-table">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Taller</th>
+                            <th>Instructor</th>
+                            <th>Tipo de Evidencia</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2024-12-01</td>
+                            <td>Robótica Avanzada</td>
+                            <td>María López</td>
+                            <td>Foto</td>
+                            <td>
+                                <button class="btn btn-primary">Descargar</button>
+                                <button class="btn btn-danger">Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2024-12-02</td>
+                            <td>Diseño 3D</td>
+                            <td>Juan Pérez</td>
+                            <td>PDF</td>
+                            <td>
+                                <button class="btn btn-primary">Descargar</button>
+                                <button class="btn btn-danger">Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a9dda8267b.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Sesiones</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="css/img/fablab.png" alt="Logo de la página" class="logo">
+            </div>
+            <h2>Admin Panel</h2>
+            <ul>
+                <li><a href="dashboard.html">Panel General</a></li>
+                <li><a href="talleres.html">Talleres</a></li>
+                <li><a href="instructor.html">Instructores</a></li>
+                <li><a href="programaciones.html">Programaciones</a></li>
+                <li><a href="inscripciones.html">Inscripciones</a></li>
+                <li><a href="#" class="active">Sesiones</a></li>
+                <li><a href="evidencias.html">Evidencias</a></li>
+            </ul>
+        </aside>
+
+
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Gestión de Sesiones</h1>
+                <div class="user-info">
+                    <i class="fas fa-user"></i>
+                    <span>Administrador</span>
+                </div>
+            </header>
+
+
+            <section class="table-section">
+                <div class="table-header">
+                    <h2>Sesiones por Programación</h2>
+                    <button class="btn btn-primary" id="addSesionBtn">+ Agregar Sesión</button>
+                </div>
+                <table class="sesiones-table">
+                    <thead>
+                        <tr>
+                            <th>ID Sesión</th>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                            <th>Ubicación</th>
+                            <th>Asistencia</th>
+                            <th>Evidencias</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>2024-11-25</td>
+                            <td>10:00 AM</td>
+                            <td>Laboratorio A</td>
+                            <td>80%</td>
+                            <td><button class="btn btn-secondary">Ver Evidencias</button></td>
+                            <td>
+                                <button class="btn btn-edit">Editar</button>
+                                <button class="btn btn-delete">Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <div class="modal" id="sesionModal">
+        <div class="modal-content">
+            <h3 id="modalTitle">Agregar Sesión</h3>
+            <form id="sesionForm">
+                <label for="fechaSesion">Fecha:</label>
+                <input type="date" id="fechaSesion" name="fechaSesion" required>
+
+                <label for="horaSesion">Hora:</label>
+                <input type="time" id="horaSesion" name="horaSesion" required>
+
+                <label for="ubicacionSesion">Ubicación:</label>
+                <select id="ubicacionSesion" name="ubicacionSesion" required>
+                    <option value="">Seleccione una opción</option>
+                    <option value="Laboratorio A">Laboratorio A</option>
+                    <option value="Laboratorio B">Laboratorio B</option>
+                    <option value="Sala de Conferencias">Sala de Conferencias</option>
+                </select>
+
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <button type="button" class="btn btn-secondary" id="closeModalBtn">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a9dda8267b.js" crossorigin="anonymous"></script>
+    <script src="js/sesiones.js"></script>
+</body>
+</html>

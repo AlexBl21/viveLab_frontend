@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Talleres</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="css/img/fablab.png" alt="Logo de la página" class="logo">
+            </div>
+            <h2>Admin Panel</h2>
+            <ul>
+                <li><a href="dashboard.html" >Panel General</a></li>
+                <li><a href="#" class="active">Talleres</a></li>
+                <li><a href="instructor.html">Instructores</a></li>
+                <li><a href="programaciones.html">Programaciones</a></li>
+                <li><a href="inscripciones.html">Inscripciones</a></li>
+                <li><a href="sesiones.html">Sesiones</a></li>
+                <li><a href="evidencias.html">Evidencias</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Gestión de Talleres</h1>
+                <div class="user-info">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Administrador</span>
+                </div>
+            </header>
+
+            <section class="filters">
+                <form>
+                    <label for="name">Nombre del taller</label>
+                    <input type="text" id="name" name="name">
+
+                    <button type="submit">Buscar</button>
+                </form>
+            </section>
+
+            <section class="table-section">
+                <div class="table-header">
+                    <h2>Listado de Talleres</h2>
+                    <button class="btn btn-primary" id="addTallerBtn">+ Agregar Taller</button>
+                </div>
+                <table class="talleres-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Introducción a la Programación</td>
+                            <td>Curso básico para aprender programación.</td>
+                            <td>
+                                <button class="btn btn-edit">Editar</button>
+                                <button class="btn btn-delete">Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <div class="modal" id="tallerModal">
+        <div class="modal-content">
+            <h3 id="modalTitle">Agregar Taller</h3>
+            <form id="tallerForm">
+                <label for="nombreTaller">Nombre:</label>
+                <input type="text" id="nombreTaller" name="nombreTaller" required>
+
+                <label for="descripcionTaller">Descripción:</label>
+                <textarea id="descripcionTaller" name="descripcionTaller" rows="4" required></textarea>
+
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <button type="button" class="btn btn-secondary" id="closeModalBtn">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a9dda8267b.js" crossorigin="anonymous"></script>
+    <script src="js/taller.js"></script>
+</body>
+</html>
