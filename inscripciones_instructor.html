@@ -37,7 +37,7 @@
                     <label for="participantName">Nombre del Participante</label>
                     <input type="text" id="participantName" name="participantName">
 
-                    <label for="document">Documento</label>
+                    <label for="document">Taller</label>
                     <input type="text" id="document" name="document">
                     <button type="submit">Aplicar Filtros</button>
                 </form>
@@ -45,16 +45,15 @@
             <section class="table-section">
                 <div class="table-header">
                     <h2>Listado de Inscripciones</h2>
-                    <button class="btn-agregar" id="addInscripcionBtn">+ Agregar Inscripción</button>
+                    <button class="btn-agregar" id="addInscripcionBtn"><i class="fas fa-plus mr-2"></i> Agregar Inscripción</button>
                 </div>
-                <table class="inscripciones-table">
+                <table class="sesiones-table">
                     <thead>
                         <tr>
                             <th>ID</th>
                             <th>Nombre del Participante</th>
-                            <th>Tipo Documento</th>
-                            <th>No. Documento</th>
                             <th>Taller</th>
+                            <th>fecha</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
@@ -62,12 +61,11 @@
                         <tr>
                             <td>1</td>
                             <td>Juan Pérez</td>
-                            <td>C.C</td>
-                            <td>12345678</td>
                             <td>Introducción a la Programación</td>
+                            <td>21/09/2024</td>
                             <td>
-                                <button class="btn btn-edit">Editar</button>
-                                <button class="btn btn-delete">Eliminar</button>
+                                <button class="btn btn-edit"><i class="fas fa-pencil mr-2"></i> Editar</button>
+                                <button class="btn btn-delete"><i class="fas fa-trash mr-2"></i> Eliminar</button>
                             </td>
                         </tr>
                     </tbody>

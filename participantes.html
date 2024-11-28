@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de Sesiones</title>
+    <title>Gestión de Inscripciones</title>
     <link rel="stylesheet" href="css/dashboard.css">
 </head>
 <body>
     <div class="dashboard-container">
-
         <aside class="sidebar">
             <div class="logo-container">
                 <img src="css/img/fablab.png" alt="Logo de la página" class="logo">
@@ -19,59 +18,54 @@
                 <li><a href="talleres.html">Talleres</a></li>
                 <li><a href="instructor.html">Instructores</a></li>
                 <li><a href="programaciones.html">Programaciones</a></li>
-                <li><a href="inscripciones.html">Inscripciones</a></li>
-                <li><a href="#" class="active">Sesiones</a></li>
+                <li><a href="inscripciones.html" >Inscripciones</a></li>
+                <li><a href="sesiones.html">Sesiones</a></li>
                 <li><a href="evidencias.html">Evidencias</a></li>
                 <li><a href="localidad.html">Municipios y colegios</a></li>
-                <li><a href="participantes.html">Participantes</a></li>
+                <li><a href="#" class="active">Participantes</a></li>
             </ul>
         </aside>
 
-
         <main class="main-content">
             <header class="main-header">
-                <h1>Gestión de Sesiones</h1>
+                <h1>Gestión de Participantes</h1>
                 <div class="user-info">
                     <i class="fas fa-user"></i>
                     <span>Administrador</span>
                 </div>
             </header>
+
             <section class="filters">
                 <h2>Filtros</h2>
                 <form>
-                    <label for="name">ID de la programacion</label>
+                    <label for="name">Nombre de Participante</label>
                     <input type="text" id="name" name="name">
 
                     <button type="submit">Buscar</button>
                 </form>
             </section>
-
             <section class="table-section">
                 <div class="table-header">
-                    <h2>Sesiones por Programación</h2>
-                    <button class="btn-agregar" id="addSesionBtn">+ Agregar Sesión</button>
+                    <h2>Listado de Inscripciones</h2>
+                    <button class="btn-agregar" id="addparticipante">+ Agregar Inscripción</button>
                 </div>
                 <div class="tabla-generica-container">
                     <table class="tabla-generica">
                         <thead>
                             <tr>
-                                <th>Instructor</th>
-                                <th>Fecha</th>
-                                <th>Hora</th>
-                                <th>Programación</th>
-                                <th>Ubicación</th>
-                                <th>Asistencia</th>
+                                <th>ID</th>
+                                <th>Nombre del Participante</th>
+                                <th>Colegio</th>
+                                <th>Tipo de documento</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Juan Perez</td>
-                                <td>2024-11-25</td>
-                                <td>10:00 AM</td>
-                                <td>Introducción a robotica</td>
-                                <td>Laboratorio A</td>
-                                <td>80%</td>
+                                <td>1</td>
+                                <td>Juan Pérez</td>
+                                <td>Anotio nariño</td>
+                                <td>T.I</td>
                                 <td>
                                     <button class="btn btn-edit"><i class="fas fa-pencil mr-2"></i> Editar</button>
                                     <button class="btn btn-delete"><i class="fas fa-trash mr-2"></i> Eliminar</button>
@@ -84,28 +78,25 @@
         </main>
     </div>
 
-    <div class="modal" id="sesionModal">
+    <div class="modal" id="participanteModal">
         <div class="modal-content">
-            <h3 id="modalTitle">Agregar Sesión</h3>
-            <form id="sesionForm">
-                <label for="fechaSesion">Fecha:</label>
-                <input type="date" id="fechaSesion" name="fechaSesion" required>
+            <h3 id="modalTitle">Agregar Inscripción</h3>
+            <form id="inscripcionForm">
+                <label for="nombreParticipante">Nombre del Participante:</label>
+                <input type="text" id="nombreParticipante" name="nombreParticipante" required>
 
-                <label for="horaSesion">Hora:</label>
-                <input type="time" id="horaSesion" name="horaSesion" required>
+                <label for="tipoDocumentoSelect">Tipo de Documento</label>
+                <select id="tipoDocumentoSelect" name="tipoDocumentoSelect" required>
+                    <option value="" disabled selected>Seleccione un tipo de documento</option>
+                    <option value="1">C.C</option>
+                    <option value="2">T.I</option>
+                </select>
 
-                <label for="idInstructorsesion">ID Instructor:</label>
-                <input type="text" id="idInstructorsesion" name="idInstructorsesion" required>
-
-                <label for="idProgramacionSesion">ID programación:</label>
-                <input type="text" id="idProgramacionSesion" name="idProgramacionSesion" required>
-
-                <label for="ubicacionSesion">Ubicación:</label>
-                <select id="ubicacionSesion" name="ubicacionSesion" required>
-                    <option value="">Seleccione una opción</option>
-                    <option value="Laboratorio A">Laboratorio A</option>
-                    <option value="Laboratorio B">Laboratorio B</option>
-                    <option value="Sala de Conferencias">Sala de Conferencias</option>
+                <label for="colegioSeleccionado">Colegio:</label>
+                <select id="colegioSeleccionado" name="colegioSeleccionado" required>
+                    <option value="" disabled selected>Seleccione un colegio</option>
+                    <option value="1">Antonio Nariño</option>
+                    <option value="2">Calasan</option>
                 </select>
 
                 <button type="submit" class="btn btn-primary">Guardar</button>
@@ -115,6 +106,6 @@
     </div>
 
     <script src="https://kit.fontawesome.com/a9dda8267b.js" crossorigin="anonymous"></script>
-    <script src="js/sesiones.js"></script>
+    <script src="js/participante.js"></script>
 </body>
 </html>

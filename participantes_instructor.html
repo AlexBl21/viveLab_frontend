@@ -31,29 +31,41 @@
                 </div>
             </header>
 
+            <section class="filters">
+                <h2>Filtros</h2>
+                <form>
+                    <label for="name">Nombre de Participante</label>
+                    <input type="text" id="name" name="name">
+
+                    <label for="name">Documento</label>
+                    <input type="text" id="name" name="name">
+                    <button type="submit">Aplicar Filtros</button>
+                </form>
+            </section>
+
             <section class="table-section">
                 <div class="table-header">
                     <h2>Participantes</h2>
                     <button class="btn-agregar" id="btnAddParticipante">+ Nuevo Participante</button>
                 </div>
-                <table class="inscripciones-table">
+                <table class="sesiones-table">
                     <thead>
                         <tr>
-                            <th>Nombre</th>
-                            <th>Tipo de Documento</th>
-                            <th>Número de Documento</th>
+                            <th>ID</th>
+                            <th>Nombre del Participante</th>
                             <th>Colegio</th>
+                            <th>Tipo de documento</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
+                            <td>1</td>
                             <td>Juan Pérez</td>
-                            <td>C.C</td>
-                            <td>12345678</td>
-                            <td>Colegio Nacional</td>
+                            <td>Anotio nariño</td>
+                            <td>T.I</td>
                             <td>
-                                <button class="btn btn-edit" onclick="mostrarEditarParticipante('Juan Pérez', 'CC', '12345678', 'Colegio Nacional')">Editar</button>
+                                <button class="btn btn-edit" onclick="mostrarEditarParticipante('Juan Pérez', 'CC', '12345678', 'Colegio Nacional')"><i class="fas fa-pencil mr-2"></i> Editar</button>
                             </td>
                         </tr>
                     </tbody>

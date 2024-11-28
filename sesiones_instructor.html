@@ -39,6 +39,7 @@
                 <table class="sesiones-table">
                     <thead>
                         <tr>
+                            <th>Programacion</th>
                             <th>Fecha</th>
                             <th>Hora</th>
                             <th>Ubicación</th>
@@ -47,11 +48,12 @@
                     </thead>
                     <tbody>
                         <tr>
+                            <td>introduccion a la electronica</td>
                             <td>2024-11-27</td>
                             <td>10:00 AM</td>
                             <td>Sala A</td>
                             <td>
-                                <button class="btn btn-asistencia">Registrar Asistencia</button>
+                                <button class="btn btn-asistencia"><i class="fa-solid fa-check"></i> Registrar Asistencia</button>
                             </td>
                         </tr>
                     </tbody>
@@ -72,6 +74,9 @@
 
                 <label for="ubicacionSesion">Ubicación:</label>
                 <input type="text" id="ubicacionSesion" name="ubicacionSesion" required>
+
+                <label for="programacionSesion">ID Programacion:</label>
+                <input type="text" id="programacionSesion" name="programacionSesion" required>
 
                 <button type="submit" class="btn btn-primary">Guardar</button>
                 <button type="button" class="btn btn-secondary" id="closeModalBtn">Cancelar</button>

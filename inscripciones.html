@@ -21,6 +21,9 @@
                 <li><a href="#" class="active">Inscripciones</a></li>
                 <li><a href="sesiones.html">Sesiones</a></li>
                 <li><a href="evidencias.html">Evidencias</a></li>
+                <li><a href="localidad.html">Municipios y colegios</a></li>
+                <li><a href="participantes.html">Participantes</a></li>
+                
             </ul>
         </aside>
 
@@ -39,8 +42,9 @@
                     <label for="name">Nombre de Participante</label>
                     <input type="text" id="name" name="name">
 
-                    <label for="name">Documento</label>
-                    <input type="text" id="name" name="name">
+                    <label for="date">Fecha de inscripcion:</label>
+                    <input type="date" id="date" name="date">
+
                     <button type="submit">Aplicar Filtros</button>
                 </form>
             </section>
@@ -55,9 +59,8 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Nombre del Participante</th>
-                                <th>Tipo Documento</th>
-                                <th>No. Documento</th>
                                 <th>Taller</th>
+                                <th>fecha</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -65,12 +68,11 @@
                             <tr>
                                 <td>1</td>
                                 <td>Juan Pérez</td>
-                                <td>C.C</td>
-                                <td>12345678</td>
                                 <td>Introducción a la Programación</td>
+                                <td>21/09/2024</td>
                                 <td>
-                                    <button class="btn btn-edit">Editar</button>
-                                    <button class="btn btn-delete">Eliminar</button>
+                                    <button class="btn btn-edit"><i class="fas fa-pencil mr-2"></i> Editar</button>
+                                    <button class="btn btn-delete"><i class="fas fa-trash mr-2"></i> Eliminar</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -84,25 +86,14 @@
         <div class="modal-content">
             <h3 id="modalTitle">Agregar Inscripción</h3>
             <form id="inscripcionForm">
-                <label for="nombreParticipante">Nombre del Participante:</label>
-                <input type="text" id="nombreParticipante" name="nombreParticipante" required>
+                <label for="idParticipante">ID del Participante:</label>
+                <input type="text" id="idParticipante" name="idParticipante" required>
 
-                <label for="tipoDocumentoSelect">Tipo de Documento</label>
-                <select id="tipoDocumentoSelect" name="tipoDocumentoSelect" required>
-                    <option value="" disabled selected>Seleccione un tipo de documento</option>
-                    <option value="1">C.C</option>
-                    <option value="2">T.I</option>
-                </select>
+                <label for="fechaParticipante">Fecha de la inscripcion:</label>
+                <input type="text" id="fechaParticipante" name="fechaParticipante" required>
 
-                <label for="documentoParticipante">Documento:</label>
-                <input type="text" id="documentoParticipante" name="documentoParticipante" required>
-
-                <label for="tallerSeleccionado">Taller:</label>
-                <select id="tallerSeleccionado" name="tallerSeleccionado" required>
-                    <option value="" disabled selected>Seleccione un taller</option>
-                    <option value="1">Introducción a la Programación</option>
-                    <option value="2">Avanzado en Robótica</option>
-                </select>
+                <label for="idProgramacion">ID de la programacion:</label>
+                <input type="text" id="idProgramacion" name="idProgramacion" required>
 
                 <button type="submit" class="btn btn-primary">Guardar</button>
                 <button type="button" class="btn btn-secondary" id="closeModalBtn">Cancelar</button>

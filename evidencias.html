@@ -22,6 +22,8 @@
                 <li><a href="inscripciones.html">Inscripciones</a></li>
                 <li><a href="sesiones.html">Sesiones</a></li>
                 <li><a href="#" class="active">Evidencias</a></li>
+                <li><a href="localidad.html">Municipios y colegios</a></li>
+                <li><a href="participantes.html">Participantes</a></li>
             </ul>
         </aside>
 
@@ -34,6 +36,16 @@
                     <span>Administrador</span>
                 </div>
             </header>
+
+            <section class="filters">
+                <h2>Filtros</h2>
+                <form>
+                    <label for="name">Nombre del taller</label>
+                    <input type="text" id="name" name="name">
+
+                    <button type="submit">Buscar</button>
+                </form>
+            </section>
 
             <!-- Section: Tabla de Evidencias -->
             <section class="table-section">
@@ -58,8 +70,8 @@
                                 <td>María López</td>
                                 <td>Foto</td>
                                 <td>
-                                    <button class="btn btn-descargar">Descargar</button>
-                                    <button class="btn btn-delete">Eliminar</button>
+                                    <button class="btn btn-descargar"><i class="fas fa-download"></i> Descargar</button>
+                                    <button class="btn btn-delete"><i class="fas fa-trash mr-2"></i> Eliminar</button>
                                 </td>
                             </tr>
                             <tr>
@@ -68,8 +80,8 @@
                                 <td>Juan Pérez</td>
                                 <td>PDF</td>
                                 <td>
-                                    <button class="btn btn-descargar">Descargar</button>
-                                    <button class="btn btn-delete">Eliminar</button>
+                                    <button class="btn btn-descargar"><i class="fas fa-download"></i> Descargar</button>
+                                    <button class="btn btn-delete"><i class="fas fa-trash mr-2"></i> Eliminar</button>
                                 </td>
                             </tr>
                         </tbody>

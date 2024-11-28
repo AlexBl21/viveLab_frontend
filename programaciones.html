@@ -21,6 +21,9 @@
                 <li><a href="inscripciones.html">Inscripciones</a></li>
                 <li><a href="sesiones.html">Sesiones</a></li>
                 <li><a href="evidencias.html">Evidencias</a></li>
+                <li><a href="localidad.html">Municipios y colegios</a></li>
+                <li><a href="participantes.html">Participantes</a></li>
+                
             </ul>
         </aside>
 
@@ -58,10 +61,13 @@
                                 <th>ID</th>
                                 <th>Taller</th>
                                 <th>Instructor</th>
-                                <th>Municipio</th>
                                 <th>Colegio</th>
                                 <th>Ubicación</th>
-                                <th>Fechas</th>
+                                <th>Fecha Inicio-fin</th>
+                                <th>Grado Curso</th>
+                                <th>grupo</th>
+                                <th>Cantidad</th>
+                                <th>Observacion</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -71,13 +77,16 @@
                                 <td>1</td>
                                 <td>Introducción a la Robótica </td>
                                 <td>Juan Pérez</td>
-                                <td>Cúcuta</td>
                                 <td>Colegio Central</td>
                                 <td>Aula 102</td>
                                 <td>01/12/2024 - 10/12/2024</td>
+                                <td>Noveno</td>
+                                <td>Grupo A</td>
+                                <td>30</td>
+                                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum reprehenderit similique quis laudantium, dolorum at eum optio hic minus ad in debitis commodi officia voluptas quidem suscipit illum vel. Debitis.</td>
                                 <td>
-                                    <button class="btn btn-edit">Editar</button>
-                                    <button class="btn btn-delete">Eliminar</button>
+                                    <button class="btn btn-edit"><i class="fas fa-pencil mr-2"></i> Editar</button>
+                                    <button class="btn btn-delete"><i class="fas fa-trash mr-2"></i> Eliminar</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -104,11 +113,6 @@
                     <option value="1">Juan Pérez</option>
                 </select>
 
-                <label for="municipio">municipio:</label>
-                <select id="municipio" name="municipio" required>
-                    <option value="">Seleccionar Instructor</option>
-                    <option value="1">Cúcuta</option>
-                </select>
 
                 <label for="colegioSelect">Colegio:</label>
                 <select id="colegioSelect" name="colegio" required>
@@ -125,8 +129,15 @@
                 <label for="fechaFinInput">Fecha Fin:</label>
                 <input type="date" id="fechaFinInput" name="fechaFin" required>
 
+                <label for="cantidadInput">Cantidad inscritos:</label>
+                <input type="text" id="cantidadInput" name="cantidad" required>
+
+                <label for="gradoInput">Grado del curso:</label>
+                <input type="text" id="gradoInput" name="grado" required>
+
                 <button type="submit" class="btn btn-primary">Guardar</button>
                 <button type="button" class="btn btn-secondary" id="closeModalBtn">Cancelar</button>
+
             </form>
         </div>
     </div>

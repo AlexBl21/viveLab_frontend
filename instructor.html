@@ -21,6 +21,8 @@
                 <li><a href="inscripciones.html">Inscripciones</a></li>
                 <li><a href="sesiones.html">Sesiones</a></li>
                 <li><a href="evidencias.html">Evidencias</a></li>
+                <li><a href="localidad.html">Municipios y colegios</a></li>
+                <li><a href="participantes.html">Participantes</a></li>
             </ul>
         </aside>
 
@@ -52,6 +54,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Nombre</th>
+                                <th>Documento</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -59,9 +62,10 @@
                             <tr>
                                 <td>1</td>
                                 <td>María Pérez</td>
+                                <td>10512929484</td>
                                 <td>
-                                    <button class="btn btn-edit">Editar</button>
-                                    <button class="btn btn-delete">Eliminar</button>
+                                    <button class="btn btn-edit"><i class="fas fa-pencil mr-2"></i> Editar</button>
+                                    <button class="btn btn-delete"><i class="fas fa-trash mr-2"></i> Eliminar</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -78,12 +82,8 @@
                 <label for="nombreInstructor">Nombre:</label>
                 <input type="text" id="nombreInstructor" name="nombreInstructor" required>
 
-                <label for="tipoDocumentoSelect">Tipo de Documento</label>
-                <select id="tipoDocumentoSelect" name="tipoDocumentoSelect" required>
-                    <option value="" disabled selected>Seleccione un tipo de documento</option>
-                    <option value="1">C.C</option>
-                    <option value="2">T.I</option>
-                </select>
+                <label for="documentoInstrcutor">No. documento:</label>
+                <input type="text" id="documentoInstrcutor" name="documentoInstrcutor" required>
 
                 <button type="submit" class="btn btn-primary">Guardar</button>
                 <button type="button" class="btn btn-secondary" id="closeModalBtn">Cancelar</button>

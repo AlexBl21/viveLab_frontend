@@ -15,6 +15,12 @@ body {
     width: 100%; 
 }
 
+.mr-2 {margin-right: .5rem;}
+
+.card:hover {
+    transform: scale(1.05) translateY(-15px);
+}
+
 .sidebar {
     width: 250px;
     background-color: #ffa726;
@@ -114,6 +120,7 @@ body {
     border-radius: 5px;
     text-align: center;
     padding: 1rem;
+    transition: .3s all ease-in-out;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -190,6 +197,7 @@ body {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 2rem;
+    
 }
 
 .inscripciones-table th, 
@@ -260,6 +268,7 @@ body {
     border-radius: 5px;
     padding: 1rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
 }
 
 .form-section label {
@@ -287,7 +296,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    width: 50%;
+    width: 40%;
     text-align: center;
 }
 

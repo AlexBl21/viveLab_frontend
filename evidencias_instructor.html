@@ -33,6 +33,10 @@
         <section class="form-section">
             <h2>Subir Nueva Evidencia</h2>
             <form id="subirEvidenciaForm" enctype="multipart/form-data">
+
+                <label for="idSesionArchivo">ID de sesión:</label>
+                <input type="text" id="idSesionArchivo" name="idSesionArchivo" required>
+
                 <label for="evidenciaArchivo">Archivo:</label>
                 <input type="file" id="evidenciaArchivo" name="evidenciaArchivo" required>
 
@@ -47,7 +51,7 @@
             <div class="table-header">
                 <h2>Listado de Evidencias</h2>
             </div>
-            <table class="inscripciones-table">
+            <table class="sesiones-table">
                 <thead>
                     <tr>
                         <th>Archivo</th>
@@ -60,8 +64,8 @@
                         <td><a href="#">Evidencia1.pdf</a></td>
                         <td>Observación de la sesión 1.</td>
                         <td>
-                            <button class="btn-edit" onclick="verDetallesEvidencia('Evidencia1.pdf', 'Observación de la sesión 1.')">Ver</button>
-                            <button class="btn-delete">Eliminar</button>
+                            <button class="btn-edit" onclick="verDetallesEvidencia('Evidencia1.pdf', 'Observación de la sesión 1.')"><i class="fas fa-eye mr-2"></i> Ver</button>
+                            <button class="btn-delete"><i class="fas fa-trash mr-2"></i> Eliminar</button>
                         </td>
                     </tr>
                 </tbody>
