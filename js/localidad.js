@@ -1,46 +1,29 @@
-// Función para abrir un modal
-function abrirModal(id) {
-    document.getElementById(id).style.display = "flex";
-}
-
-// Función para cerrar un modal
-function cerrarModal(id) {
-    document.getElementById(id).style.display = "none";
-}
-
-// Aquí puedes agregar más funciones para la lógica de los formularios y tablas si es necesario
-
-// Ejemplo de cómo manejar el envío del formulario para agregar municipios (esto puede cambiar según tu necesidad)
-document.getElementById('form-municipio')?.addEventListener('submit', function(event) {
-    event.preventDefault(); // Evitar el envío del formulario para manejarlo con JS
-
-    // Obtener los valores del formulario
-    const daneMunicipio = document.getElementById('dane-municipio').value;
-    const nombreMunicipio = document.getElementById('nombre-municipio').value;
-
-    // Aquí podrías enviar los datos al servidor o hacer alguna acción con los datos
-    console.log('Municipio agregado:', daneMunicipio, nombreMunicipio);
-
-    // Cerrar el modal después de guardar
-    cerrarModal('modal-municipio');
-    // Limpiar los campos del formulario
-    document.getElementById('form-municipio').reset();
+// Mostrar el modal para Municipio
+document.getElementById('btn-municipio').addEventListener('click', function() {
+    document.getElementById('modal-municipio').style.display = 'flex';
 });
 
-// Ejemplo de cómo manejar el envío del formulario para agregar colegios
-document.getElementById('form-colegio')?.addEventListener('submit', function(event) {
-    event.preventDefault(); // Evitar el envío del formulario para manejarlo con JS
+// Mostrar el modal para Colegio
+document.getElementById('btn-colegio').addEventListener('click', function() {
+    document.getElementById('modal-colegio').style.display = 'flex';
+});
 
-    // Obtener los valores del formulario
-    const idColegio = document.getElementById('id-colegio').value;
-    const nombreColegio = document.getElementById('nombre-colegio').value;
-    const idMunicipio = document.getElementById('id-municipio').value;
+// Cerrar el modal para Municipio
+document.getElementById('close-municipio').addEventListener('click', function() {
+    document.getElementById('modal-municipio').style.display = 'none';
+});
 
-    // Aquí podrías enviar los datos al servidor o hacer alguna acción con los datos
-    console.log('Colegio agregado:', idColegio, nombreColegio, idMunicipio);
+// Cerrar el modal para Colegio
+document.getElementById('close-colegio').addEventListener('click', function() {
+    document.getElementById('modal-colegio').style.display = 'none';
+});
 
-    // Cerrar el modal después de guardar
-    cerrarModal('modal-colegio');
-    // Limpiar los campos del formulario
-    document.getElementById('form-colegio').reset();
+// Cerrar los modales si se hace clic fuera de ellos
+window.addEventListener('click', function(event) {
+    if (event.target === document.getElementById('modal-municipio')) {
+        document.getElementById('modal-municipio').style.display = 'none';
+    }
+    if (event.target === document.getElementById('modal-colegio')) {
+        document.getElementById('modal-colegio').style.display = 'none';
+    }
 });

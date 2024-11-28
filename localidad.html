@@ -28,22 +28,16 @@
         </aside>
 
         <main class="main-content">
-
-            <!-- Contenedor específico para la vista localidad -->
             <div class="localidad-container">
-
-                <header class="main-header">
-                    <h1>Municipios y Colegios</h1>
-                </header>
-
-                <!-- Formulario de municipios -->
-                <section>
-                    <div class="table-header">
-                        <h2>Municipios Registrados</h2>
-                        <button class="btn-agregar" onclick="abrirModal('modal-municipio')">Agregar Municipio</button>
-                    </div>
-                    <div class="tabla-generica-container">
-                        <table class="tabla-generica">
+                <!-- Contenedor flex para las dos secciones -->
+                <div class="flex-container">
+                    <!-- Contenedor para Municipio -->
+                    <div class="tabla-municipio">
+                        <div class="table-header">
+                            <h2>Municipios Registrados</h2>
+                            <button class="btn-agregar" id="btn-municipio">Agregar Municipio</button>
+                        </div>
+                        <table class="tabla-generica" id="tabla-municipios">
                             <thead>
                                 <tr>
                                     <th>DANE</th>
@@ -52,37 +46,35 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- Aquí irán los datos de los municipios -->
+                                <!-- Filas de datos de municipios -->
                             </tbody>
                         </table>
                     </div>
-                </section>
-
-                <!-- Formulario de colegios -->
-                <section>
-                    <div class="table-header">
-                        <h2>Colegios Registrados</h2>
-                        <button class="btn-agregar" onclick="abrirModal('modal-colegio')">Agregar Colegio</button>
-                    </div>
-                    <div class="tabla-generica-container">
-                        <table class="tabla-generica">
+        
+                    <!-- Contenedor para Colegio -->
+                    <div class="tabla-colegio">
+                        <div class="table-header">
+                            <h2>Colegios Registrados</h2>
+                            <button class="btn-agregar" id="btn-colegio">Agregar Colegio</button>
+                        </div>
+                        <table class="tabla-generica" id="tabla-colegios">
                             <thead>
                                 <tr>
-                                    <th>ID Colegio</th>
-                                    <th>Nombre</th>
-                                    <th>ID Municipio</th>
+                                    <th>Colegio</th>
+                                    <th>Municipio</th>
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- Aquí irán los datos de los colegios -->
+                                <!-- Filas de datos de colegios -->
                             </tbody>
                         </table>
                     </div>
-                </section>
-
+                </div>
             </div>
         </main>
+        
+        
     </div>
 
     <!-- Modal para agregar municipio -->

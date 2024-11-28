@@ -371,3 +371,86 @@ body {
 .btn-agregar:hover {
     background-color: #2e7d32;
 }
+
+/* Contenedor principal para la vista de localidades */
+.localidad-container {
+    margin: 20px;
+}
+
+/* Contenedor que usa flexbox para alinear las tablas */
+.flex-container {
+    display: flex;
+    justify-content: space-between;  /* Espacio entre los elementos */
+    gap: 20px;  /* Espacio entre los divs */
+}
+
+/* Estilo para cada contenedor de tabla */
+.tabla-municipio, .tabla-colegio {
+    flex: 1;  /* Cada uno ocupa el mismo ancho */
+    border: 1px solid #ddd;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Cabecera de cada tabla, incluye el título y el botón */
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.table-header h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.btn-agregar {
+    background-color: #43a047;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-agregar:hover {
+    background-color: #2e7d32;
+}
+
+/* Estilo general de las tablas */
+.tabla-generica {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.tabla-generica th {
+    background-color: #ff5252;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px;
+    text-align: center;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.tabla-generica td {
+    padding: 10px;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    vertical-align: middle;
+}
+
+.tabla-generica tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.tabla-generica tbody tr:hover {
+    background-color: #ffe5e5;
+}
+
