@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir Evidencias</title>
+    <link rel="stylesheet" href="css/dashboard_instructor.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo-container">
+            <img src="css/img/fablab.png" alt="Logo de la página" class="logo">
+        </div>
+        <h2>Instructor Panel</h2>
+        <ul>
+            <li><a href="dashboard_instructor.html"><strong>Panel General</strong></a></li>
+            <li><a href="inscripciones_instructor.html"><strong>Inscripciones</strong></a></li>
+            <li><a href="participantes_instructor.html"><strong>Participantes</strong></a></li>
+            <li><a href="sesiones_instructor.html"><strong>Sesiones</strong></a></li>
+            <li><a href="#" class="active"><strong>Evidencias</strong></a></li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+        <header class="main-header">
+            <h1>Subir Evidencias</h1>
+            <div class="user-info">
+                <i class="fas fa-user"></i>
+                <span>Instructor</span>
+            </div>
+        </header>
+
+        <section class="form-section">
+            <h2>Subir Nueva Evidencia</h2>
+            <form id="subirEvidenciaForm" enctype="multipart/form-data">
+                <label for="evidenciaArchivo">Archivo:</label>
+                <input type="file" id="evidenciaArchivo" name="evidenciaArchivo" required>
+
+                <label for="observaciones">Observaciones:</label>
+                <textarea id="observaciones" name="observaciones" rows="4" placeholder="Escribe tus observaciones aquí..."></textarea>
+
+                <button type="submit" class="btn-submit">Subir Evidencia</button>
+            </form>
+        </section>
+
+        <!-- Tabla de evidencias subidas -->
+        <section class="table-section">
+            <div class="table-header">
+                <h2>Listado de Evidencias</h2>
+            </div>
+            <table class="inscripciones-table">
+                <thead>
+                    <tr>
+                        <th>Archivo</th>
+                        <th>Observaciones</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="#">Evidencia1.pdf</a></td>
+                        <td>Observación de la sesión 1.</td>
+                        <td>
+                            <button class="btn-edit" onclick="verDetallesEvidencia('Evidencia1.pdf', 'Observación de la sesión 1.')">Ver</button>
+                            <button class="btn-delete">Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Modal para Detalles de Evidencia -->
+    <div class="modal" id="detalleEvidenciaModal">
+        <div class="modal-content">
+            <h3>Detalles de la Evidencia</h3>
+            <form id="detalleEvidenciaForm">
+                <label for="detalleArchivo">Archivo:</label>
+                <input type="text" id="detalleArchivo" name="detalleArchivo" disabled>
+
+                <label for="detalleObservaciones">Observaciones:</label>
+                <textarea id="detalleObservaciones" name="detalleObservaciones" rows="4" disabled></textarea>
+
+                <button type="button" class="btn-secondary" id="closeModalBtn">Cerrar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a9dda8267b.js" crossorigin="anonymous"></script>
+    <script src="js/instructor/evidencias_instructor.js"></script>
+</body>
+</html>
