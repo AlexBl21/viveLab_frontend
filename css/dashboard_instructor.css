@@ -42,7 +42,7 @@ body {
 }
 
 .sidebar h2 {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     text-align: center;
     font-size: 1.5rem;
 }
@@ -54,7 +54,7 @@ body {
 }
 
 .sidebar ul li {
-    margin: 0.5rem 0;
+    margin: 15px 0;
 }
 
 .sidebar ul li a {
@@ -63,11 +63,11 @@ body {
     padding: 0.5rem 1rem;
     display: block;
     border-radius: 5px;
-    text-align: center;
+    font-size: 16px;
 }
 
 .sidebar ul li a.active, .sidebar ul li a:hover {
-    background-color: #fb8c00;
+    background-color: #ea8203;
 }
 
 /* Main Content */
@@ -196,7 +196,7 @@ body {
 .inscripciones-table td {
     border: 1px solid #ddd;
     padding: 0.75rem;
-    text-align: center;
+    align-items: center;
 }
 
 .inscripciones-table th {

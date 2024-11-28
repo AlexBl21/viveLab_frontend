@@ -21,6 +21,7 @@
                 <li><a href="inscripciones.html">Inscripciones</a></li>
                 <li><a href="sesiones.html">Sesiones</a></li>
                 <li><a href="evidencias.html">Evidencias</a></li>
+                <li><a href="localidad.html">Localidad</a></li>
             </ul>
         </aside>
 
@@ -42,32 +43,35 @@
                 </form>
             </section>
 
+            
             <section class="table-section">
                 <div class="table-header">
                     <h2>Listado de Talleres</h2>
                     <button class="btn-agregar" id="addTallerBtn">+ Agregar Taller</button>
                 </div>
-                <table class="talleres-table">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Descripción</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Introducción a la Programación</td>
-                            <td>Curso básico para aprender programación.</td>
-                            <td>
-                                <button class="btn btn-edit">Editar</button>
-                                <button class="btn btn-delete">Eliminar</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="tabla-generica-container">
+                    <table class="tabla-generica">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Descripción</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Introducción a la Programación</td>
+                                <td>Curso básico para aprender programación.</td>
+                                <td>
+                                    <button class="btn btn-edit">Editar</button>
+                                    <button class="btn btn-delete">Eliminar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </section>
         </main>
     </div>

@@ -1,4 +1,3 @@
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -56,7 +55,6 @@ body {
     display: block;
     padding: 10px;
     border-radius: 5px;
-    text-align: center;
     transition: background 0.3s;
 }
 
@@ -146,21 +144,23 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
+    justify-content: center;
+    align-items: center;
 }
 
 .filters label {
     font-size: 14px;
     color: #333;
+    
 }
 
 .filters input, .filters select {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 14px;
-    flex:1;
+    flex: 1;
     padding: 10px;
-    margin-bottom: 15px;
-} 
+}
 
 .filters button {
     background: #d32f2f;
@@ -175,59 +175,95 @@ body {
     background: #b71c1c;
 }
 
-/* para las tablas y talleres*/
-.table-section {
+.tabla-generica-container {
+    overflow-x: auto;
     margin-top: 20px;
+}
+
+.tabla-generica {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; 
+}
+
+.tabla-generica th {
+    background-color: #ff5252;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px;
+    text-align: center;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.tabla-generica td {
+    padding: 10px;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    vertical-align: middle; 
+}
+
+.tabla-generica tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.tabla-generica tbody tr:hover {
+    background-color: #ffe5e5; 
+}
+
+.tabla-generica .btn-edit {
+    background: #ffcc00;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tabla-generica .btn-delete {
+    background: #d32f2f;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tabla-generica .btn-descargar {
+    background: #0b80ce;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tabla-generica .btn-edit:hover {
+    background-color: #ffc107;
+}
+
+.tabla-generica .btn-delete:hover {
+    background-color: #b71c1c;
+}
+
+.tabla-generica .btn-descargar:hover {
+    background-color: #0059b3;
 }
 
 .table-header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%; 
+    margin-bottom: 20px; 
+    padding: 10px 0; 
 }
 
-.talleres-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
 
-.talleres-table th, .talleres-table td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-.talleres-table th {
-    background: #ff5252;
-    color: #fff;
-}
-
-.talleres-table td {
-    color: #333;
-}
-
-.btn-edit {
-    background: #ffcc00;
-    color: #fff;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.btn-delete {
-    background: #d32f2f;
-    color: #fff;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-/* los modales :p */
+/* los modales */
 .modal {
     display: none;
     position: fixed;
@@ -253,17 +289,17 @@ body {
     color: #333;
 }
 
-
 .modal-content form label {
     display: block;
     margin-bottom: 5px;
     font-size: 14px;
-    color: #555; 
+    color: #555;
     font-weight: bold;
 }
 
-.modal-content form input, 
-.modal-content form textarea {
+.modal-content form input,
+.modal-content form textarea,
+.modal-content form select {
     width: 80%;
     padding: 10px;
     margin-bottom: 15px;
@@ -275,15 +311,15 @@ body {
     transition: border-color 0.3s ease;
 }
 
-.modal-content form input:focus, 
+.modal-content form input:focus,
 .modal-content form textarea:focus {
-    border-color: #d32f2f; 
+    border-color: #d32f2f;
     outline: none;
     box-shadow: 0 0 5px rgba(211, 47, 47, 0.5);
 }
 
 .modal-content form textarea {
-    resize: none; /* Evitar que el usuario cambie el tamaño */
+    resize: none;
 }
 
 .modal-content form button {
@@ -303,7 +339,7 @@ body {
 }
 
 .modal-content form .btn-primary:hover {
-    background-color: #b71c1c; 
+    background-color: #b71c1c;
 }
 
 .modal-content form .btn-secondary {
@@ -319,89 +355,9 @@ body {
     background-color: #bbb;
 }
 
-/* Search Bar */
-.search-bar {
-    margin: 20px 0;
-}
-
-.search-bar input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-}
-
-/* Table */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-table th, table td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: left;
-}
-
-table th {
-    background-color: #ff5252;
-    color: #f4f4f9;
-}
-
-table tbody tr:hover {
-    background-color: #ffe5e5;
-}
-
-/* Estilo general para los select */
-select {
-    width: 85%;
-    padding: 10px;
-    margin: 10px 0;
-    font-size: 16px;
-    color: #333;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    appearance: none;
-    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns%3D%22http%3A//www.w3.org/2000/svg%22 viewBox%3D%220 0 4 5%22%3E%3Cpath fill%3D%22%23666%22 d%3D%22M2 0L0 2h4zM0 3l2 2 2-2z%22/%3E%3C/svg%3E');
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 10px;
-}
-
-/* Estilo para focus */
-select:focus {
-    outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-/* Estilo en hover */
-select:hover {
-    background-color: #f0f0f0;
-}
-
-/* Estilo para deshabilitados */
-select:disabled {
-    background-color: #e9ecef;
-    color: #6c757d;
-}
-
-/* Botón para ver evidencias */
-.sesiones-table .btn-secondary {
-    background-color: #607d8b;
-    color: #fff;
-}
-
-.sesiones-table .btn-secondary:hover {
-    background-color: #455a64;
-}
-
 /* Botones para agregar */
 .btn-agregar {
-    background-color: #43a047; /* Verde amigable */
+    background-color: #43a047;
     color: white;
     padding: 0.75rem 1.5rem;
     border: none;
@@ -409,22 +365,9 @@ select:disabled {
     font-size: 16px;
     cursor: pointer;
     text-align: center;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: block;
 }
 
 .btn-agregar:hover {
-    background-color: #388e3c; 
-    transform: translateY(-2px); 
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    background-color: #2e7d32;
 }
-
-.btn-agregar:active {
-    background-color: #2e7d32; 
-    transform: translateY(1px); 
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
-}
-
-
-
-

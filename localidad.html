@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Municipios y Colegios</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="css/img/fablab.png" alt="Logo de la página" class="logo">
+            </div>
+            <h2>Admin Panel</h2>
+            <ul>
+                <li><a href="dashboard.html">Panel General</a></li>
+                <li><a href="talleres.html">Talleres</a></li>
+                <li><a href="instructor.html">Instructores</a></li>
+                <li><a href="programaciones.html">Programaciones</a></li>
+                <li><a href="inscripciones.html">Inscripciones</a></li>
+                <li><a href="sesiones.html">Sesiones</a></li>
+                <li><a href="evidencias.html">Evidencias</a></li>
+                <li><a href="#" class="active">Municipios y colegios</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+
+            <!-- Contenedor específico para la vista localidad -->
+            <div class="localidad-container">
+
+                <header class="main-header">
+                    <h1>Municipios y Colegios</h1>
+                </header>
+
+                <!-- Formulario de municipios -->
+                <section>
+                    <div class="table-header">
+                        <h2>Municipios Registrados</h2>
+                        <button class="btn-agregar" onclick="abrirModal('modal-municipio')">Agregar Municipio</button>
+                    </div>
+                    <div class="tabla-generica-container">
+                        <table class="tabla-generica">
+                            <thead>
+                                <tr>
+                                    <th>DANE</th>
+                                    <th>Nombre</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Aquí irán los datos de los municipios -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Formulario de colegios -->
+                <section>
+                    <div class="table-header">
+                        <h2>Colegios Registrados</h2>
+                        <button class="btn-agregar" onclick="abrirModal('modal-colegio')">Agregar Colegio</button>
+                    </div>
+                    <div class="tabla-generica-container">
+                        <table class="tabla-generica">
+                            <thead>
+                                <tr>
+                                    <th>ID Colegio</th>
+                                    <th>Nombre</th>
+                                    <th>ID Municipio</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Aquí irán los datos de los colegios -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal para agregar municipio -->
+    <div id="modal-municipio" class="modal">
+        <div class="modal-content">
+            <h3>Agregar Municipio</h3>
+            <form id="form-municipio">
+                <label for="dane-municipio">DANE</label>
+                <input type="text" id="dane-municipio" name="dane-municipio" required>
+                
+                <label for="nombre-municipio">Nombre</label>
+                <input type="text" id="nombre-municipio" name="nombre-municipio" required>
+
+                <button type="submit" class="btn-primary">Agregar</button>
+                <button type="button" class="btn-secondary" onclick="cerrarModal('modal-municipio')">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para agregar colegio -->
+    <div id="modal-colegio" class="modal">
+        <div class="modal-content">
+            <h3>Agregar Colegio</h3>
+            <form id="form-colegio">
+                <label for="id-colegio">ID Colegio</label>
+                <input type="text" id="id-colegio" name="id-colegio" required>
+                
+                <label for="nombre-colegio">Nombre</label>
+                <input type="text" id="nombre-colegio" name="nombre-colegio" required>
+
+                <label for="id-municipio">Municipio</label>
+                <select id="id-municipio" name="id-municipio" required>
+                    <!-- Aquí se deberían cargar los municipios disponibles -->
+                    <option value="municipio1">Municipio 1</option>
+                    <option value="municipio2">Municipio 2</option>
+                </select>
+
+                <button type="submit" class="btn-primary">Agregar</button>
+                <button type="button" class="btn-secondary" onclick="cerrarModal('modal-colegio')">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/localidad.js"></script>
+</body>
+</html>
