@@ -399,6 +399,31 @@ select:disabled {
     background-color: #455a64;
 }
 
+/* Botones para agregar */
+.btn-agregar {
+    background-color: #43a047; /* Verde amigable */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-agregar:hover {
+    background-color: #388e3c; 
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-agregar:active {
+    background-color: #2e7d32; 
+    transform: translateY(1px); 
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
 
 
 
