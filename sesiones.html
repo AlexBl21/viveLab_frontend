@@ -34,17 +34,21 @@
                 <div class="user-info">
                     <i class="fas fa-user"></i>
                     <span>Administrador</span>
+                    <a href="index.html">
+                        <i class="fa-solid fa-power-off"></i>
+                      </a>
+                      
                 </div>
             </header>
             <section class="filters">
                 <h2>Filtros</h2>
-                <form>
-                    <label for="name">ID de la programacion</label>
+                <form id="searchForm">
+                    <label for="name">Nombre de la programación</label>
                     <input type="text" id="name" name="name">
-
                     <button type="submit">Buscar</button>
                 </form>
-            </section>
+            </section>            
+            
 
             <section class="table-section">
                 <div class="table-header">
@@ -64,18 +68,8 @@
                                 <th>Acciones</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="sesionesTableBody">
                             <tr>
-                                <td>Juan Perez</td>
-                                <td>2024-11-25</td>
-                                <td>10:00 AM</td>
-                                <td>Introducción a robotica</td>
-                                <td>Laboratorio A</td>
-                                <td>80%</td>
-                                <td>
-                                    <button class="btn btn-edit"><i class="fas fa-pencil mr-2"></i> Editar</button>
-                                    <button class="btn btn-delete"><i class="fas fa-trash mr-2"></i> Eliminar</button>
-                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -102,10 +96,7 @@
 
                 <label for="ubicacionSesion">Ubicación:</label>
                 <select id="ubicacionSesion" name="ubicacionSesion" required>
-                    <option value="">Seleccione una opción</option>
-                    <option value="Laboratorio A">Laboratorio A</option>
-                    <option value="Laboratorio B">Laboratorio B</option>
-                    <option value="Sala de Conferencias">Sala de Conferencias</option>
+                    <option value="">Cargando ubicaciones...</option>
                 </select>
 
                 <button type="submit" class="btn btn-primary">Guardar</button>
@@ -113,7 +104,7 @@
             </form>
         </div>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://kit.fontawesome.com/a9dda8267b.js" crossorigin="anonymous"></script>
     <script src="js/sesiones.js"></script>
 </body>

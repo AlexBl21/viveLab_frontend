@@ -32,6 +32,9 @@
                 <div class="user-info">
                     <i class="fas fa-user"></i>
                     <span>Administrador</span>
+                    <a href="index.html">
+                        <i class="fa-solid fa-power-off"></i>
+                      </a>
                 </div>
             </header>
 
@@ -40,10 +43,11 @@
                 <form>
                     <label for="name">Nombre de Participante</label>
                     <input type="text" id="name" name="name">
-
+            
                     <button type="submit">Buscar</button>
                 </form>
             </section>
+            
             <section class="table-section">
                 <div class="table-header">
                     <h2>Listado de Inscripciones</h2>
@@ -62,14 +66,6 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>Juan Pérez</td>
-                                <td>Anotio nariño</td>
-                                <td>T.I</td>
-                                <td>
-                                    <button class="btn btn-edit"><i class="fas fa-pencil mr-2"></i> Editar</button>
-                                    <button class="btn btn-delete"><i class="fas fa-trash mr-2"></i> Eliminar</button>
-                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -95,8 +91,6 @@
                 <label for="colegioSeleccionado">Colegio:</label>
                 <select id="colegioSeleccionado" name="colegioSeleccionado" required>
                     <option value="" disabled selected>Seleccione un colegio</option>
-                    <option value="1">Antonio Nariño</option>
-                    <option value="2">Calasan</option>
                 </select>
 
                 <button type="submit" class="btn btn-primary">Guardar</button>
@@ -104,7 +98,7 @@
             </form>
         </div>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://kit.fontawesome.com/a9dda8267b.js" crossorigin="anonymous"></script>
     <script src="js/participante.js"></script>
 </body>

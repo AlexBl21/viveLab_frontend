@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Programaciones</title>
     <link rel="stylesheet" href="css/dashboard.css">
 </head>
+
 <body>
     <div class="dashboard-container">
         <aside class="sidebar">
@@ -23,7 +25,7 @@
                 <li><a href="evidencias.html">Evidencias</a></li>
                 <li><a href="localidad.html">Municipios y colegios</a></li>
                 <li><a href="participantes.html">Participantes</a></li>
-                
+
             </ul>
         </aside>
 
@@ -31,8 +33,12 @@
             <header class="main-header">
                 <h1>Gestión de Programaciones</h1>
                 <div class="user-info">
-                    <i class="fas fa-user-circle"></i>
+                    <i class="fas fa-user"></i>
                     <span>Administrador</span>
+                    <a href="index.html">
+                        <i class="fa-solid fa-power-off"></i>
+                      </a>
+                      
                 </div>
             </header>
 
@@ -47,10 +53,8 @@
                     <form>
                         <label for="name">Taller programado</label>
                         <input type="text" id="name" name="name">
-    
-                        <label for="date">Fecha de programacion:</label>
-                        <input type="date" id="date" name="date">
-    
+
+
                         <button type="submit">Aplicar Filtros</button>
                     </form>
                 </section>
@@ -63,31 +67,16 @@
                                 <th>Instructor</th>
                                 <th>Colegio</th>
                                 <th>Ubicación</th>
-                                <th>Fecha Inicio-fin</th>
+                                <th>Fecha Inicio-Fin</th>
                                 <th>Grado Curso</th>
-                                <th>grupo</th>
+                                <th>Grupo</th>
                                 <th>Cantidad</th>
-                                <th>Observacion</th>
+                                <th>Observación</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- Ejemplo de fila -->
                             <tr>
-                                <td>1</td>
-                                <td>Introducción a la Robótica </td>
-                                <td>Juan Pérez</td>
-                                <td>Colegio Central</td>
-                                <td>Aula 102</td>
-                                <td>01/12/2024 - 10/12/2024</td>
-                                <td>Noveno</td>
-                                <td>Grupo A</td>
-                                <td>30</td>
-                                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum reprehenderit similique quis laudantium, dolorum at eum optio hic minus ad in debitis commodi officia voluptas quidem suscipit illum vel. Debitis.</td>
-                                <td>
-                                    <button class="btn btn-edit"><i class="fas fa-pencil mr-2"></i> Editar</button>
-                                    <button class="btn btn-delete"><i class="fas fa-trash mr-2"></i> Eliminar</button>
-                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -141,8 +130,9 @@
             </form>
         </div>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://kit.fontawesome.com/a9dda8267b.js" crossorigin="anonymous"></script>
     <script src="js/programaciones.js"></script>
 </body>
+
 </html>

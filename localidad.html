@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Municipios y Colegios</title>
     <link rel="stylesheet" href="css/dashboard.css">
 </head>
+
 <body>
 
     <div class="dashboard-container">
@@ -28,7 +30,19 @@
             </ul>
         </aside>
 
+
         <main class="main-content">
+            <div class="main-header">
+                <h1>Gestión de Municipios y colegios</h1>
+                <div class="user-info">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Administrador</span>
+                    <a href="index.html">
+                        <i class="fa-solid fa-power-off"></i>
+                    </a>
+
+                </div>
+            </div>
             <div class="localidad-container">
                 <!-- Contenedor flex para las dos secciones -->
                 <div class="flex-container">
@@ -48,22 +62,16 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Cúcuta</td>
-                                    <td>
-                                        <button class="btn btn-edit"><i class="fas fa-pencil mr-2"></i> Editar</button>
-                                        <button class="btn btn-delete"><i class="fas fa-trash mr-2"></i> Eliminar</button>
-                                    </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-        
+
                     <!-- Contenedor para Colegio -->
                     <div class="tabla-colegio">
                         <div class="table-header">
                             <h2>Colegios Registrados</h2>
-                            <button class="btn-agregar" id="btn-colegio">Agregar Colegio</button>
+                            <button class="btn-agregar" id="btn-colegio">+ Agregar Colegio</button>
                         </div>
                         <table class="tabla-generica" id="tabla-colegios">
                             <thead>
@@ -75,12 +83,6 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Antonio Nariño</td>
-                                    <td>Cúcuta</td>
-                                    <td>
-                                        <button class="btn btn-edit"><i class="fas fa-pencil mr-2"></i> Editar</button>
-                                        <button class="btn btn-delete"><i class="fas fa-trash mr-2"></i> Eliminar</button>
-                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -88,52 +90,75 @@
                 </div>
             </div>
         </main>
-        
-        
+
+
     </div>
 
     <!-- Modal para agregar municipio -->
-    <div id="modal-municipio" class="modal">
-        <div class="modal-content">
-            <h3>Agregar Municipio</h3>
-            <form id="form-municipio">
-                <label for="dane-municipio">DANE</label>
-                <input type="text" id="dane-municipio" name="dane-municipio" required>
-                
-                <label for="nombre-municipio">Nombre</label>
-                <input type="text" id="nombre-municipio" name="nombre-municipio" required>
-
-                <button type="submit" class="btn-primary">Agregar</button>
-                <button type="button" class="btn-secondary" onclick="cerrarModal('modal-municipio')">Cancelar</button>
-            </form>
+    <div class="modal" id="modalAgregarMunicipio" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Agregar Municipio</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="formAgregarMunicipio">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="nombreMunicipio" class="form-label">Nombre del Municipio</label>
+                            <input type="text" id="nombreMunicipio" class="form-control" placeholder="Ingrese el nombre"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="codigoDaneMunicipio" class="form-label">Código DANE</label>
+                            <input type="text" id="codigoDaneMunicipio" class="form-control"
+                                placeholder="Ingrese el código DANE" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
+
 
     <!-- Modal para agregar colegio -->
-    <div id="modal-colegio" class="modal">
-        <div class="modal-content">
-            <h3>Agregar Colegio</h3>
-            <form id="form-colegio">
-                <label for="id-colegio">Dane</label>
-                <input type="text" id="id-colegio" name="id-colegio" required>
-                
-                <label for="nombre-colegio">Nombre</label>
-                <input type="text" id="nombre-colegio" name="nombre-colegio" required>
-
-                <label for="id-municipio">Municipio</label>
-                <select id="id-municipio" name="id-municipio" required>
-                    <!-- Aquí se deberían cargar los municipios disponibles -->
-                    <option value="municipio1">Municipio 1</option>
-                    <option value="municipio2">Municipio 2</option>
-                </select>
-
-                <button type="submit" class="btn-primary">Agregar</button>
-                <button type="button" class="btn-secondary" onclick="cerrarModal('modal-colegio')">Cancelar</button>
-            </form>
+    <div class="modal" id="modalAgregarColegio" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Agregar Colegio</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="formAgregarColegio">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="nombreColegio" class="form-label">Nombre del Colegio</label>
+                            <input type="text" id="nombreColegio" class="form-control" placeholder="Ingrese el nombre"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="municipioColegio" class="form-label">Municipio</label>
+                            <select id="municipioColegio" class="form-select" required>
+                                <option value="">Seleccione un municipio</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 
-    <script src="js/localidad.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://kit.fontawesome.com/a9dda8267b.js" crossorigin="anonymous"></script>
+    <script src="js/localidad.js"></script>
 </body>
+
 </html>

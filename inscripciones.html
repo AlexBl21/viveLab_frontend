@@ -33,21 +33,26 @@
                 <div class="user-info">
                     <i class="fas fa-user"></i>
                     <span>Administrador</span>
+                    <a href="index.html">
+                        <i class="fa-solid fa-power-off"></i>
+                      </a>
+                      
                 </div>
             </header>
 
             <section class="filters">
                 <h2>Filtros</h2>
-                <form>
+                <form id="filtersForm">
                     <label for="name">Nombre de Participante</label>
                     <input type="text" id="name" name="name">
-
-                    <label for="date">Fecha de inscripcion:</label>
+            
+                    <label for="date">Fecha de Inscripción:</label>
                     <input type="date" id="date" name="date">
-
-                    <button type="submit">Aplicar Filtros</button>
+            
+                    <button type="button" onclick="applyFilters()">Aplicar Filtros</button>
                 </form>
             </section>
+            
             <section class="table-section">
                 <div class="table-header">
                     <h2>Listado de Inscripciones</h2>
@@ -90,7 +95,7 @@
                 <input type="text" id="idParticipante" name="idParticipante" required>
 
                 <label for="fechaParticipante">Fecha de la inscripcion:</label>
-                <input type="text" id="fechaParticipante" name="fechaParticipante" required>
+                <input type="date" id="fechaParticipante" name="fechaParticipante" required>
 
                 <label for="idProgramacion">ID de la programacion:</label>
                 <input type="text" id="idProgramacion" name="idProgramacion" required>
@@ -100,7 +105,7 @@
             </form>
         </div>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://kit.fontawesome.com/a9dda8267b.js" crossorigin="anonymous"></script>
     <script src="js/inscripcion.js"></script>
 </body>

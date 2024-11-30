@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Participantes</title>
     <link rel="stylesheet" href="css/dashboard_instructor.css">
 </head>
+
 <body>
     <div class="dashboard-container">
         <aside class="sidebar">
@@ -14,7 +16,7 @@
             </div>
             <h2>Instructor Panel</h2>
             <ul>
-                <li><a href="dashboard_instructor.html" ><strong>Panel General</strong></a></li>
+                <li><a href="dashboard_instructor.html"><strong>Panel General</strong></a></li>
                 <li><a href="inscripciones_instructor.html"><strong>Inscripciones</strong></a></li>
                 <li><a href="#" class="active"><strong>Participantes</strong></a></li>
                 <li><a href="sesiones_instructor.html"><strong>Sesiones</strong></a></li>
@@ -28,25 +30,27 @@
                 <div class="user-info">
                     <i class="fas fa-user"></i>
                     <span>Instructor</span>
+                    <a href="index.html">
+                        <i class="fa-solid fa-power-off"></i>
+                      </a>
                 </div>
             </header>
 
             <section class="filters">
                 <h2>Filtros</h2>
-                <form>
-                    <label for="name">Nombre de Participante</label>
-                    <input type="text" id="name" name="name">
-
-                    <label for="name">Documento</label>
-                    <input type="text" id="name" name="name">
-                    <button type="submit">Aplicar Filtros</button>
+                <form id="searchForm">
+                    <label for="searchInput">Buscar Participante por Nombre:</label>
+                    <input type="text" id="searchInput" name="searchInput"
+                        placeholder="Ingrese el nombre del participante">
+                    <button type="submit">Buscar</button>
                 </form>
             </section>
+
 
             <section class="table-section">
                 <div class="table-header">
                     <h2>Participantes</h2>
-                    <button class="btn-agregar" id="btnAddParticipante">+ Nuevo Participante</button>
+                    <button id="nuevoParticipanteBtn" class="btn-agregar">Nuevo Participante</button>
                 </div>
                 <table class="sesiones-table">
                     <thead>
@@ -60,69 +64,73 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>1</td>
-                            <td>Juan Pérez</td>
-                            <td>Anotio nariño</td>
-                            <td>T.I</td>
-                            <td>
-                                <button class="btn btn-edit" onclick="mostrarEditarParticipante('Juan Pérez', 'CC', '12345678', 'Colegio Nacional')"><i class="fas fa-pencil mr-2"></i> Editar</button>
-                            </td>
                         </tr>
                     </tbody>
                 </table>
             </section>
+            <!-- Modal de Nuevo Participante -->
+            <div class="modal" id="localidadModal">
+                <div class="modal-content">
+                    <h3 id="modalTitle">Agregar Municipio</h3>
+                    <form id="localidadForm">
+                        <label for="codigoDane">Código DANE:</label>
+                        <input type="text" id="codigoDane" name="codigoDane" required>
             
+                        <label for="nombreMunicipio">Nombre del Municipio:</label>
+                        <input type="text" id="nombreMunicipio" name="nombreMunicipio" required>
+            
+                        <label for="nombreColegio">Nombre del Colegio:</label>
+                        <input type="text" id="nombreColegio" name="nombreColegio" required>
+            
+                        <label for="idColegioDane">ID Colegio DANE:</label>
+                        <input type="text" id="idColegioDane" name="idColegioDane" required>
+            
+                        <label for="municipioSeleccionado">Municipio:</label>
+                        <select id="municipioSeleccionado" name="municipioSeleccionado" required>
+                            <option value="" disabled selected>Seleccione un municipio</option>
+                            <!-- Aquí se pueden agregar opciones dinámicamente desde la base de datos -->
+                        </select>
+            
+                        <div class="modal-buttons">
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                            <button type="button" class="btn btn-secondary" id="closeModalBtn">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+
+            <!-- Modal de Edición -->
             <div class="modal" id="editarParticipanteModal">
                 <div class="modal-content">
                     <h3>Editar Participante</h3>
                     <form id="editarParticipanteForm">
                         <label for="nombreParticipante">Nombre:</label>
                         <input type="text" id="nombreParticipante" name="nombreParticipante" required>
-            
+
                         <label for="tipoDocumento">Tipo de Documento:</label>
-                        <select id="tipoDocumento" name="tipoDocumento" required>
+                        <select id="tipoDocumentoSelect" name="tipoDocumento" required>
                             <option value="" disabled selected>Seleccione un tipo</option>
                             <option value="CC">C.C</option>
                             <option value="TI">T.I</option>
                         </select>
-            
+
                         <label for="colegioParticipante">Colegio:</label>
-                        <input type="text" id="colegioParticipante" name="colegioParticipante" required>
-            
+                        <select id="colegioSeleccionado" name="colegioSeleccionado" required>
+                            <option value="" disabled selected>Seleccione un colegio</option>
+                        </select>
+
                         <button type="submit" class="btn btn-primary">Guardar Cambios</button>
                         <button type="button" class="btn btn-secondary" id="closeModalBtn">Cancelar</button>
                     </form>
                 </div>
             </div>
-            
-            
         </main>
     </div>
 
-    <div class="modal" id="editarParticipanteModal">
-        <div class="modal-content">
-            <h3>Editar Participante</h3>
-            <form id="editarParticipanteForm">
-                <label for="nombreParticipante">Nombre:</label>
-                <input type="text" id="nombreParticipante" name="nombreParticipante" required>
-
-                <label for="tipoDocumento">Tipo de Documento:</label>
-                <select id="tipoDocumento" name="tipoDocumento" required>
-                    <option value="" disabled selected>Seleccione un tipo</option>
-                    <option value="CC">C.C</option>
-                    <option value="TI">T.I</option>
-                </select>
-
-                <label for="colegioParticipante">Colegio:</label>
-                <input type="text" id="colegioParticipante" name="colegioParticipante" required>
-
-                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-                <button type="button" class="btn btn-secondary" id="closeModalBtn">Cancelar</button>
-            </form>
-        </div>
-    </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://kit.fontawesome.com/a9dda8267b.js" crossorigin="anonymous"></script>
     <script src="js/instructor/participantes_inst.js"></script>
 </body>
+
 </html>

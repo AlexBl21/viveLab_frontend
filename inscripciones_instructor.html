@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de Inscripciones - Instructor</title>
+    <title>Gestión de Participantes</title>
     <link rel="stylesheet" href="css/dashboard_instructor.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
             <ul>
                 <li><a href="dashboard_instructor.html" ><strong>Panel General</strong></a></li>
                 <li><a href="#" class="active"><strong>Inscripciones</strong></a></li>
-                <li><a href="participantes_instructor.html" ><strong>Participantes</strong></a></li>
+                <li><a href="participantes_instructor.html" class=""><strong>Participantes</strong></a></li>
                 <li><a href="sesiones_instructor.html"><strong>Sesiones</strong></a></li>
                 <li><a href="evidencias_instructor.html"><strong>Evidencias</strong></a></li>
             </ul>
@@ -34,26 +34,27 @@
             <section class="filters">
                 <h2>Filtros</h2>
                 <form>
-                    <label for="participantName">Nombre del Participante</label>
-                    <input type="text" id="participantName" name="participantName">
+                    <label for="name">Nombre de Participante</label>
+                    <input type="text" id="name" name="name">
 
-                    <label for="document">Taller</label>
-                    <input type="text" id="document" name="document">
+                    <label for="name">Documento</label>
+                    <input type="text" id="name" name="name">
                     <button type="submit">Aplicar Filtros</button>
                 </form>
             </section>
+
             <section class="table-section">
                 <div class="table-header">
-                    <h2>Listado de Inscripciones</h2>
-                    <button class="btn-agregar" id="addInscripcionBtn"><i class="fas fa-plus mr-2"></i> Agregar Inscripción</button>
+                    <h2>Participantes</h2>
+                    <button class="btn-agregar" id="btnAddParticipante">+ Nuevo Participante</button>
                 </div>
                 <table class="sesiones-table">
                     <thead>
                         <tr>
                             <th>ID</th>
                             <th>Nombre del Participante</th>
-                            <th>Taller</th>
-                            <th>fecha</th>
+                            <th>Colegio</th>
+                            <th>Tipo de documento</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
@@ -61,50 +62,67 @@
                         <tr>
                             <td>1</td>
                             <td>Juan Pérez</td>
-                            <td>Introducción a la Programación</td>
-                            <td>21/09/2024</td>
+                            <td>Anotio nariño</td>
+                            <td>T.I</td>
                             <td>
-                                <button class="btn btn-edit"><i class="fas fa-pencil mr-2"></i> Editar</button>
-                                <button class="btn btn-delete"><i class="fas fa-trash mr-2"></i> Eliminar</button>
+                                <button class="btn btn-edit" onclick="mostrarEditarParticipante('Juan Pérez', 'CC', '12345678', 'Colegio Nacional')"><i class="fas fa-pencil mr-2"></i> Editar</button>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </section>
+            
+            <div class="modal" id="editarParticipanteModal">
+                <div class="modal-content">
+                    <h3>Editar Participante</h3>
+                    <form id="editarParticipanteForm">
+                        <label for="nombreParticipante">Nombre:</label>
+                        <input type="text" id="nombreParticipante" name="nombreParticipante" required>
+            
+                        <label for="tipoDocumento">Tipo de Documento:</label>
+                        <select id="tipoDocumento" name="tipoDocumento" required>
+                            <option value="" disabled selected>Seleccione un tipo</option>
+                            <option value="CC">C.C</option>
+                            <option value="TI">T.I</option>
+                        </select>
+            
+                        <label for="colegioParticipante">Colegio:</label>
+                        <input type="text" id="colegioParticipante" name="colegioParticipante" required>
+            
+                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                        <button type="button" class="btn btn-secondary" id="closeModalBtn">Cancelar</button>
+                    </form>
+                </div>
+            </div>
+            
+            
         </main>
     </div>
 
-    <div class="modal" id="inscripcionModal">
+    <div class="modal" id="editarParticipanteModal">
         <div class="modal-content">
-            <h3 id="modalTitle">Agregar Inscripción</h3>
-            <form id="inscripcionForm">
-                <label for="nombreParticipante">Nombre del Participante:</label>
+            <h3>Editar Participante</h3>
+            <form id="editarParticipanteForm">
+                <label for="nombreParticipante">Nombre:</label>
                 <input type="text" id="nombreParticipante" name="nombreParticipante" required>
 
-                <label for="tipoDocumentoSelect">Tipo de Documento</label>
-                <select id="tipoDocumentoSelect" name="tipoDocumentoSelect" required>
-                    <option value="" disabled selected>Seleccione un tipo de documento</option>
-                    <option value="1">C.C</option>
-                    <option value="2">T.I</option>
+                <label for="tipoDocumento">Tipo de Documento:</label>
+                <select id="tipoDocumento" name="tipoDocumento" required>
+                    <option value="" disabled selected>Seleccione un tipo</option>
+                    <option value="CC">C.C</option>
+                    <option value="TI">T.I</option>
                 </select>
 
-                <label for="documentoParticipante">Documento:</label>
-                <input type="text" id="documentoParticipante" name="documentoParticipante" required>
+                <label for="colegioParticipante">Colegio:</label>
+                <input type="text" id="colegioParticipante" name="colegioParticipante" required>
 
-                <label for="tallerSeleccionado">Taller:</label>
-                <select id="tallerSeleccionado" name="tallerSeleccionado" required>
-                    <option value="" disabled selected>Seleccione un taller</option>
-                    <option value="1">Introducción a la Programación</option>
-                    <option value="2">Avanzado en Robótica</option>
-                </select>
-
-                <button type="submit" class="btn btn-primary">Guardar</button>
+                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
                 <button type="button" class="btn btn-secondary" id="closeModalBtn">Cancelar</button>
             </form>
         </div>
     </div>
 
     <script src="https://kit.fontawesome.com/a9dda8267b.js" crossorigin="anonymous"></script>
-    <script src="js/instructor/inscripcion_inst.js"></script>
+    <script src="js/instructor/participantes_inst.js"></script>
 </body>
 </html>

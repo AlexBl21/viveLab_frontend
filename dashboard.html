@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="css/dashboard.css">
 </head>
+
 <body>
     <div class="dashboard-container">
 
@@ -37,6 +39,10 @@
                 <div class="user-info">
                     <i class="fa-solid fa-user"></i>
                     <span>Administrador</span>
+                    <a href="index.html">
+                        <i class="fa-solid fa-power-off"></i>
+                      </a>
+                      
                 </div>
             </header>
 
@@ -45,28 +51,31 @@
                 <div class="card">
                     <i class="fa-solid fa-book" style="font-size: 4rem; padding-top: 2rem; color: #007BFF;"></i>
                     <h3>Talleres</h3>
-                    <p>25</p>
+                    <p>0</p>
                 </div>
                 <div class="card">
                     <i class="fa-solid fa-list-check" style="font-size: 4rem; padding-top: 2rem; color: #28A745;"></i>
                     <h3>Inscripciones</h3>
-                    <p>130</p>
+                    <p>0</p>
                 </div>
                 <div class="card">
-                    <i class="fa-solid fa-chalkboard-user" style="font-size: 4rem; padding-top: 2rem; color: #FD7E14;"></i>
+                    <i class="fa-solid fa-chalkboard-user"
+                        style="font-size: 4rem; padding-top: 2rem; color: #FD7E14;"></i>
                     <h3>Sesiones</h3>
-                    <p>45</p>
+                    <p>0</p>
                 </div>
                 <div class="card">
                     <i class="fa-solid fa-user-tie" style="font-size: 4rem; padding-top: 2rem; color: #2177c3;"></i>
                     <h3>Instructores</h3>
-                    <p>10</p>
+                    <p>0</p>
                 </div>
             </section>
 
         </main>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://kit.fontawesome.com/a9dda8267b.js" crossorigin="anonymous"></script>
+    <script src="js/dashboard.js"></script>
 </body>
+
 </html>

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Instructores</title>
     <link rel="stylesheet" href="css/dashboard.css">
 </head>
+
 <body>
     <div class="dashboard-container">
         <aside class="sidebar">
@@ -32,6 +34,10 @@
                 <div class="user-info">
                     <i class="fa-solid fa-user"></i>
                     <span>Administrador</span>
+                    <a href="index.html">
+                        <i class="fa-solid fa-power-off"></i>
+                      </a>
+                      
                 </div>
             </header>
 
@@ -44,7 +50,7 @@
                     <form>
                         <label for="name">Nombre del instructor</label>
                         <input type="text" id="name" name="name">
-    
+
                         <button type="submit">Buscar</button>
                     </form>
                 </section>
@@ -58,7 +64,7 @@
                                 <th>Acciones</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="instructoresTableBody">
                             <tr>
                                 <td>1</td>
                                 <td>María Pérez</td>
@@ -90,8 +96,9 @@
             </form>
         </div>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://kit.fontawesome.com/a9dda8267b.js" crossorigin="anonymous"></script>
     <script src="js/instructor.js"></script>
 </body>
+
 </html>
